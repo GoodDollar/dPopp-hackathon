@@ -1,0 +1,92 @@
+{
+  "name": "@gitcoin/passport-cra-app",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.8",
+    "@datadog/browser-logs": "^4.11.2",
+    "@datadog/browser-rum": "^4.11.2",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@ethersproject/providers": "^5.6.4",
+    "@gitcoin/passport-database-client": "^0.0.1",
+    "@gitcoin/passport-identity": "^0.0.1",
+    "@gitcoin/passport-types": "^0.0.1",
+    "@glazed/did-datastore-model": "^0.2.0",
+    "@glazed/types": "^0.2.0",
+    "@self.id/framework": "^0.3.2",
+    "@types/node": "^16.11.39",
+    "@types/react": "^17.0.45",
+    "@types/react-dom": "^17.0.2",
+    "@web3-onboard/core": "^2.2.5",
+    "@web3-onboard/injected-wallets": "^2.0.5",
+    "@web3-onboard/ledger": "^2.0.3",
+    "@web3-onboard/react": "^2.1.5",
+    "@web3-onboard/walletconnect": "^2.0.1",
+    "@web3-onboard/walletlink": "^2.0.1",
+    "broadcast-channel": "^4.11.0",
+    "framer-motion": "^6.3.0",
+    "node-fetch": "^3.2.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-google-login": "^5.2.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "ts-debounce": "^4.0.0",
+    "typescript": "^4.7.3",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@ceramicnetwork/common": "^2.0.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^14.1.1",
+    "@types/jest": "^27.5.2",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "autoprefixer": "^10.4.0",
+    "babel-jest": "^27.5.1",
+    "base64-js": "^1.5.1",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-testing-library": "^5.3.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-localstorage-mock": "^2.4.21",
+    "jest-mock-extended": "^2.0.5",
+    "postcss": "^8.4.5",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.1",
+    "react-qr-code": "^2.0.7",
+    "tailwindcss": "^3.0.7",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 {
   "packages": [
     "app",
+    "cra-app",
     "database-client",
     "iam",
     "identity",
