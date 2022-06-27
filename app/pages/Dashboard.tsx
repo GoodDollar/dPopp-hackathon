@@ -121,25 +121,6 @@ export default function Dashboard() {
           )}
           {viewerConnection.status !== "connecting" &&
             (passport ? (
-              // <Spinner
-              //   thickness="4px"
-              //   speed="0.65s"
-              //   emptyColor="gray.200"
-              //   color="purple.500"
-              //   size="xl"
-              //   data-testid="loading-spinner-passport"
-              // />
-              <div>
-                {/* <Alert status="warning" data-testid="loading-spinner-passport">
-                <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="gray.500" size="md" />
-                <AlertTitle ml={4}> Connecting</AlertTitle>
-              </Alert> */}
-                <div className="flex flex-row rounded-lg border-2">
-                  <Spinner thickness="4px" speed="0.65s" emptyColor="gray.11" color="gray.12" size="md" />
-                  <h1>Connecting</h1>
-                </div>
-              </div>
-            ) : (
               <div>
                 <button
                   data-testid="button-passport-json"
@@ -154,6 +135,16 @@ export default function Dashboard() {
                   subheading={"You can find the Passport JSON data below"}
                   jsonOutput={passport}
                 />
+              </div>
+            ) : (
+              <div>
+                <div
+                  className="float-right flex flex-row items-center rounded-md border-2 border-gray-300 py-2 px-6 text-black"
+                  data-testid="loading-spinner-passport"
+                >
+                  <Spinner thickness="4px" speed="0.65s" emptyColor="lightGray" color="gray" size="md" />
+                  <h1 className="m-4">Connecting</h1>
+                </div>
               </div>
             ))}
         </div>
