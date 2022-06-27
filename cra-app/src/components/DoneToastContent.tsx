@@ -1,4 +1,3 @@
-// --- React Methods
 import React from "react";
 
 import { PROVIDER_ID } from "@gitcoin/passport-types";

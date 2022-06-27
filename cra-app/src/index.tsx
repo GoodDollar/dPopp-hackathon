@@ -1,17 +1,10 @@
-// --- Methods
 import React from "react";
 import { BroadcastChannel } from "broadcast-channel";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-
-// -- Next Methods
 import type { NextPage } from "next";
-
-// -- Pages
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Privacy from "./pages/privacy";
-
-// -- Datadog
 import { datadogRum } from "@datadog/browser-rum";
 import { datadogLogs } from "@datadog/browser-logs";
 

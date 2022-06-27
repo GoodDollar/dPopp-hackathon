@@ -1,26 +1,17 @@
-// --- React Methods
 import React, { useContext, useState } from "react";
-
-// --- Datadog
 import { datadogLogs } from "@datadog/browser-logs";
 import { datadogRum } from "@datadog/browser-rum";
-
-// --- Identity tools
-import { fetchVerifiableCredential } from "@gitcoin/passport-identity/dist/commonjs/src/credentials";
-
-// pull context
+import { fetchVerifiableCredential } from "@gitcoin/passport-identity";
+import { PROVIDER_ID, Stamp } from "@gitcoin/passport-types";
 import { UserContext } from "../../context/userContext";
 
-import { PROVIDER_ID, Stamp } from "@gitcoin/passport-types";
 
-const iamUrl = process.env.NEXT_PUBLIC_DPOPP_IAM_URL || "";
-
-// --- import components
 import { Card } from "../Card";
 import { VerifyModal } from "../VerifyModal";
 import { useDisclosure, useToast } from "@chakra-ui/react";
 import { DoneToastContent } from "../DoneToastContent";
 
+const iamUrl = process.env.NEXT_PUBLIC_DPOPP_IAM_URL || "";
 const providerId: PROVIDER_ID = "Poh";
 
 export default function PohCard(): JSX.Element {

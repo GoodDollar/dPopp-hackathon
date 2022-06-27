@@ -1,17 +1,8 @@
-// --- React Methods
 import React, { useContext } from "react";
-
-// --- Chakra UI Elements
 import { Spinner, useDisclosure } from "@chakra-ui/react";
-
-// --- Types
 import { VerifiableCredential } from "@gitcoin/passport-types";
 import { ProviderSpec } from "../config/providers";
-
-// --- Context
 import { UserContext } from "../context/userContext";
-
-// --- Components
 import { JsonOutputModal } from "../components/JsonOutputModal";
 
 export type CardProps = {

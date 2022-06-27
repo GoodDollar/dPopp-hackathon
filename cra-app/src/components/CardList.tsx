@@ -1,7 +1,4 @@
-// --- React Methods
 import React from "react";
-
-// --- Identity Providers
 import { GoogleCard, EnsCard, PohCard, TwitterCard, PoapCard, FacebookCard, BrightidCard } from "./ProviderCards";
 
 export const CardList = (): JSX.Element => {

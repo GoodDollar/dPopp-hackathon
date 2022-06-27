@@ -6,9 +6,9 @@ import { mockAddress, mockWallet } from "../../__test-fixtures__/onboardHookValu
 import { STAMP_PROVIDERS } from "../../config/providers";
 import { poapStampFixture } from "../../__test-fixtures__/databaseStorageFixtures";
 import { SUCCESFUL_POAP_RESULT } from "../../__test-fixtures__/verifiableCredentialResults";
-import { fetchVerifiableCredential } from "@gitcoin/passport-identity/dist/commonjs/src/credentials";
+import { fetchVerifiableCredential } from "@gitcoin/passport-identity";
 
-jest.mock("@gitcoin/passport-identity/dist/commonjs/src/credentials", () => ({
+jest.mock("@gitcoin/passport-identity", () => ({
   fetchVerifiableCredential: jest.fn(),
 }));
 jest.mock("../../utils/onboard.ts");

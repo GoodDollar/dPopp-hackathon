@@ -1,15 +1,14 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor, waitForElementToBeRemoved } from "@testing-library/react";
 import { PohCard } from "../ProviderCards";
-
 import { UserContext, UserContextState } from "../../context/userContext";
 import { mockAddress, mockWallet } from "../../__test-fixtures__/onboardHookValues";
 import { STAMP_PROVIDERS } from "../../config/providers";
 import { pohStampFixture } from "../../__test-fixtures__/databaseStorageFixtures";
 import { SUCCESFUL_POH_RESULT } from "../../__test-fixtures__/verifiableCredentialResults";
-import { fetchVerifiableCredential } from "@gitcoin/passport-identity/dist/commonjs/src/credentials";
+import { fetchVerifiableCredential } from "@gitcoin/passport-identity";
 
-jest.mock("@gitcoin/passport-identity/dist/commonjs/src/credentials", () => ({
+jest.mock("@gitcoin/passport-identity", () => ({
   fetchVerifiableCredential: jest.fn(),
 }));
 jest.mock("../../utils/onboard.ts");

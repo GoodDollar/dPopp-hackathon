@@ -1,24 +1,12 @@
-// --- React Methods
 import React, { useContext, useState } from "react";
-
-// --- Identity tools
-import { fetchVerifiableCredential } from "@gitcoin/passport-identity/dist/commonjs/src/credentials";
-
-// --- Google OAuth toolkit
+import { fetchVerifiableCredential } from "@gitcoin/passport-identity";
 import GoogleLogin, { GoogleLoginResponse } from "react-google-login";
-
-// -- Datadog
 import { datadogLogs } from "@datadog/browser-logs";
 import { datadogRum } from "@datadog/browser-rum";
-
-// pull context
 import { UserContext } from "../../context/userContext";
-
-// --- Style Components
 import { Card } from "../Card";
 import { DoneToastContent } from "../DoneToastContent";
 import { useToast } from "@chakra-ui/react";
-
 import { PROVIDER_ID } from "@gitcoin/passport-types";
 import { ProviderSpec } from "../../config/providers";
 

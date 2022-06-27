@@ -7,16 +7,16 @@ import { mockAddress, mockWallet } from "../../__test-fixtures__/onboardHookValu
 import { STAMP_PROVIDERS } from "../../config/providers";
 import { brightidStampFixture } from "../../__test-fixtures__/databaseStorageFixtures";
 import { SUCCESFUL_BRIGHTID_RESULT } from "../../__test-fixtures__/verifiableCredentialResults";
-import { fetchVerifiableCredential } from "@gitcoin/passport-identity/dist/commonjs/src/credentials";
+import { fetchVerifiableCredential } from "@gitcoin/passport-identity";
 
-jest.mock("@gitcoin/passport-identity/dist/commonjs/src/credentials", () => ({
+jest.mock("@gitcoin/passport-identity", () => ({
   fetchVerifiableCredential: jest.fn(),
 }));
 jest.mock("../../utils/onboard.ts");
 
 const mockHandleConnection = jest.fn();
 const mockCreatePassport = jest.fn();
-const handleAddStamp = jest.fn().mockResolvedValue(undefined);
+const mockHandleAddStamp = jest.fn().mockResolvedValue('never');
 const mockUserContext: UserContextState = {
   userDid: "mockUserDid",
   loggedIn: true,
@@ -32,7 +32,7 @@ const mockUserContext: UserContextState = {
       stamp: undefined,
     },
   },
-  handleAddStamp: handleAddStamp,
+  handleAddStamp: mockHandleAddStamp,
   handleCreatePassport: mockCreatePassport,
   handleConnection: mockHandleConnection,
   address: mockAddress,
@@ -101,7 +101,7 @@ describe("when the verify button is clicked", () => {
 
   afterEach(() => {
     global.fetch = originalFetch;
-    jest.clearAllMocks();
+    jest.resetAllMocks();
   });
 
   describe("and when a successful BrightId result is returned", () => {
@@ -156,7 +156,7 @@ describe("when the verify button is clicked", () => {
       fireEvent.click(finalVerifyButton!);
 
       await waitFor(() => {
-        expect(handleAddStamp).toBeCalled();
+        expect(mockHandleAddStamp).toBeCalled();
       });
 
       // Wait to see the done toast
@@ -189,7 +189,7 @@ describe("when the verify button is clicked", () => {
 
       fireEvent.click(modalCancelButton!);
 
-      expect(handleAddStamp).not.toBeCalled();
+      expect(mockHandleAddStamp).not.toBeCalled();
 
       await waitForElementToBeRemoved(modalCancelButton);
       expect(modalCancelButton).not.toBeInTheDocument();

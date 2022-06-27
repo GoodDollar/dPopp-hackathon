@@ -1,18 +1,9 @@
-// --- React Methods
 import React, { useContext, useState } from "react";
-
-// --- Datadog
 import { datadogLogs } from "@datadog/browser-logs";
 import { datadogRum } from "@datadog/browser-rum";
-
-// --- Identity tools
-import { fetchVerifiableCredential } from "@gitcoin/passport-identity/dist/commonjs/src/credentials";
-
-// pull context
-import { UserContext } from "../../context/userContext";
-
-// --- Chakra Elements
+import { fetchVerifiableCredential } from "@gitcoin/passport-identity";
 import { ModalFooter, Button, useDisclosure, Text, useToast } from "@chakra-ui/react";
+import { UserContext } from "../../context/userContext";
 
 import { Card } from "../Card";
 import { VerifyModal } from "../VerifyModal";

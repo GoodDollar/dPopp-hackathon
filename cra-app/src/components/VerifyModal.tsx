@@ -1,7 +1,5 @@
-// --- React Methods
 import React from "react";
 
-// --- Chakra Elements
 import {
   Modal,
   ModalOverlay,

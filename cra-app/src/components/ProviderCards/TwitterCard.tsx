@@ -1,25 +1,15 @@
-// --- Methods
-import React, { useContext, useEffect, useState } from "react";
-
-// --- Datadog
-import { datadogLogs } from "@datadog/browser-logs";
-import { datadogRum } from "@datadog/browser-rum";
-
-import { debounce } from "ts-debounce";
-import { BroadcastChannel } from "broadcast-channel";
-
-// --- Identity tools
-import { PROVIDER_ID } from "@gitcoin/passport-types";
-import { fetchVerifiableCredential } from "@gitcoin/passport-identity/dist/commonjs/src/credentials";
-
-// --- Style Components
-import { Card } from "../Card";
-import { DoneToastContent } from "../DoneToastContent";
-import { useToast } from "@chakra-ui/react";
-
-// --- Context
-import { UserContext } from "../../context/userContext";
-import { ProviderSpec } from "../../config/providers";
+import React, {useContext, useEffect, useState} from "react";
+import {datadogLogs} from "@datadog/browser-logs";
+import {datadogRum} from "@datadog/browser-rum";
+import {debounce} from "ts-debounce";
+import {BroadcastChannel} from "broadcast-channel";
+import {fetchVerifiableCredential} from "@gitcoin/passport-identity";
+import {PROVIDER_ID} from "@gitcoin/passport-types";
+import {useToast} from "@chakra-ui/react";
+import {Card} from "../Card";
+import {DoneToastContent} from "../DoneToastContent";
+import {UserContext} from "../../context/userContext";
+import {ProviderSpec} from "../../config/providers";
 
 // Each provider is recognised by its ID
 const providerId: PROVIDER_ID = "Twitter";

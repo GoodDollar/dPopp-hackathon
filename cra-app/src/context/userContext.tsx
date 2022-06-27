@@ -1,28 +1,16 @@
-// --- React Methods
 import React, { createContext, useMemo, useState, useEffect } from "react";
 import { useConnectWallet } from "@web3-onboard/react";
-
-// --- Wallet connection utilities
 import { initWeb3Onboard } from "../utils/onboard";
 import { Passport, Stamp, PROVIDER_ID } from "@gitcoin/passport-types";
-
-// --- Data Storage Functions
 import { OnboardAPI, WalletState } from "@web3-onboard/core/dist/types";
 import { JsonRpcSigner, Web3Provider } from "@ethersproject/providers";
-
-// --- Data Storage Functions
 import { CeramicDatabase } from "@gitcoin/passport-database-client";
 import { ProviderSpec, STAMP_PROVIDERS } from "../config/providers";
-
-// -- Ceramic and Glazed
 import { EthereumAuthProvider } from "@self.id/web";
 import { useViewerConnection } from "@self.id/framework";
-
-// --- Datadog
 import { datadogLogs } from "@datadog/browser-logs";
 import { datadogRum } from "@datadog/browser-rum";
 
-// -- Trusted IAM servers DID
 const IAM_ISSUER_DID = process.env.NEXT_PUBLIC_DPOPP_IAM_ISSUER_DID || "";
 
 export type AllProvidersState = {
