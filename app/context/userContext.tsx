@@ -65,6 +65,10 @@ const startingAllProvidersState: AllProvidersState = {
     providerSpec: STAMP_PROVIDERS.Github,
     stamp: undefined,
   },
+  GoodDollar: {
+    providerSpec: STAMP_PROVIDERS.GoodDollar,
+    stamp: undefined,
+  },
 };
 
 export interface UserContextState {
@@ -185,8 +189,8 @@ export const UserContextProvider = ({ children }: { children: any }) => {
         window.localStorage.setItem("connectedWallets", JSON.stringify([wallet.label]));
         // attempt to connect to ceramic (if it passes or fails always set loggingIn=false)
         try {
-          // connect to ceramic (deliberately connect with a lowercase DID to match reader)
-          await ceramicConnect(new EthereumAuthProvider(wallet.provider, wallet.accounts[0].address.toLowerCase()));
+          // connect to ceramic
+          await ceramicConnect(new EthereumAuthProvider(wallet.provider, wallet.accounts[0].address));
         } finally {
           // mark that this login attempt is complete
           setLoggingIn(false);

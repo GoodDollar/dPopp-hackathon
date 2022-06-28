@@ -28,8 +28,8 @@ export const initWeb3Onboard = init({
   ],
   appMetadata: {
     name: "Passport",
-    icon: "/assets/gitcoinLogo.svg",
-    logo: "/assets/gitcoinLogo.svg",
+    icon: "/assets/GitcoinLogo.svg",
+    logo: "/assets/GitcoinLogo.svg",
     description: "Decentralized Identity Verification",
     recommendedInjectedWallets: [
       { name: "Coinbase", url: "https://wallet.coinbase.com/" },

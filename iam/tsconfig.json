@@ -9,10 +9,12 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "dist",
+    "composite": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "*": ["../node_modules/*", "node_modules/*"]
     }
   },
-  "include": ["src/**/*", "__tests__"]
+  "include": ["src/**/*"]
 }
