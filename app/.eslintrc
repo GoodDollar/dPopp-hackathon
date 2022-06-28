@@ -1,8 +1,6 @@
 {
   "extends": ["plugin:testing-library/react", "next", "prettier"],
-  "plugins": ["prettier"],
   "rules": {
     "@next/next/no-img-element": "off"
-    // "prettier/prettier": [ "error", {"endOfLine": "auto"}]
   }
 }
