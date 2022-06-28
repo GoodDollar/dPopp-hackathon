@@ -47,7 +47,7 @@ describe("POST /challenge", function () {
       .expect("Content-Type", /json/);
 
     // expect the mocked credential to be returned and contain the expectedId
-    expect((response.body as ErrorResponseBody).error).toEqual("Unable to verify payload");
+    expect((response.body as ErrorResponseBody).error).toEqual("Missing address from challenge request body");
   });
 });
 
@@ -119,7 +119,7 @@ describe("POST /verify", function () {
       .post("/api/v0.0.0/verify")
       .send({ challenge, payload })
       .set("Accept", "application/json")
-      .expect(400)
+      .expect(401)
       .expect("Content-Type", /json/);
 
     expect((response.body as ErrorResponseBody).error).toEqual("Unable to verify payload");
@@ -151,7 +151,7 @@ describe("POST /verify", function () {
       .post("/api/v0.0.0/verify")
       .send({ challenge, payload })
       .set("Accept", "application/json")
-      .expect(400)
+      .expect(401)
       .expect("Content-Type", /json/);
 
     expect((response.body as ErrorResponseBody).error).toEqual("Unable to verify payload");
@@ -184,7 +184,7 @@ describe("POST /verify", function () {
       .post("/api/v0.0.0/verify")
       .send({ challenge, payload })
       .set("Accept", "application/json")
-      .expect(400)
+      .expect(403)
       .expect("Content-Type", /json/);
 
     expect((response.body as ErrorResponseBody).error).toEqual("Unable to verify proofs");
@@ -219,7 +219,7 @@ describe("POST /verify", function () {
       .post("/api/v0.0.0/verify")
       .send({ challenge, payload })
       .set("Accept", "application/json")
-      .expect(400)
+      .expect(500)
       .expect("Content-Type", /json/);
 
     expect((response.body as ErrorResponseBody).error).toEqual("Unable to verify payload");

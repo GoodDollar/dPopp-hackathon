@@ -1,20 +1,9 @@
-import { Router } from "react-router-dom";
 import { render } from "@testing-library/react";
 import { STAMP_PROVIDERS } from "../../config/providers";
 import { UserContext, UserContextState } from "../../context/userContext";
 import Index from "../../pages/index";
 
-import { createMemoryHistory } from "history";
-
-const history = createMemoryHistory();
-
 jest.mock("../../utils/onboard.ts");
-const useRouter = jest.spyOn(require("next/router"), "useRouter");
-
-useRouter.mockImplementationOnce(() => ({
-  query: {},
-  asPath: "",
-}));
 
 const mockHandleConnection = jest.fn();
 const mockCreatePassport = jest.fn();
@@ -98,11 +87,9 @@ describe("when index is provided queryParams matching twitters OAuth response", 
     });
 
     render(
-      <Router location={history.location} navigator={history}>
-        <UserContext.Provider value={mockUserContext}>
-          <Index />
-        </UserContext.Provider>
-      </Router>
+      <UserContext.Provider value={mockUserContext}>
+        <Index />
+      </UserContext.Provider>
     );
 
     // expect message to be posted and window.close() to have been called)

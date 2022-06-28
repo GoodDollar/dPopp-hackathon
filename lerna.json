@@ -11,6 +11,5 @@
   "version": "independent",
   "useWorkspaces": true,
   "stream": true,
-  "changelogPreset": "angular",
-  "useNx": false
+  "changelogPreset": "angular"
 }

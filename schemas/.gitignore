@@ -23,6 +23,7 @@ lerna-debug.log*
 # ceramic
 .pinning.store
 scripts/create-model.json
+scripts/publish-model.json
 
 # misc
 .DS_Store

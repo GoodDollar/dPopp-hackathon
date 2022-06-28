@@ -65,8 +65,8 @@ export default function Dashboard() {
   // Allow user to retry Ceramic connection if failed
   const retryConnection = () => {
     if (isLoadingPassport == undefined && wallet) {
-      // console.log('retrying connection . . .')
-      ceramicConnect(new EthereumAuthProvider(wallet.provider, wallet.accounts[0].address));
+      // connect to ceramic (deliberately connect with a lowercase DID to match reader)
+      ceramicConnect(new EthereumAuthProvider(wallet.provider, wallet.accounts[0].address.toLowerCase()));
       onRetryModalClose();
     }
   };
